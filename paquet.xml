@@ -39,6 +39,10 @@
 		<onglet nom="renovas" titre="renovas:renovas_titre" parent="configuration" icone="images/renovas-24.png" />
 	-->
 
-
-
+		<necessite nom="gis" compatibilite="[4.3.4;]" />
+		<necessite nom="multilingue" compatibilite="[0.3.1;]" />
+		<necessite nom="cextras" compatibilite="[3.2.3;]" />	
+			
+		<pipeline nom="declarer_champs_extras" inclure="base/renovas.php" />
+		<pipeline nom="pre_edition" inclure="renovas_pipelines.php" />		
 </paquet>
