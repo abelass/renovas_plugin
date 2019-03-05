@@ -29,14 +29,16 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * @return void
 **/
 function renovas_upgrade($nom_meta_base_version, $version_cible) {
-    include_spip('inc/cextras');
-    include_spip('base/renovas');
-    
+	include_spip('inc/cextras');
+	include_spip('base/renovas');
+		
 	$maj = array();
-    
-    //Installer les champs extras
-    cextras_api_upgrade(renovas_declarer_champs_extras(), $maj['create']); 
-
+	
+	//Installer les champs extras  
+	if (function_exists('cextras_api_upgrade')) {
+		cextras_api_upgrade(renovas_declarer_champs_extras(), $maj['create']);
+	}
+	
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 }
@@ -59,5 +61,3 @@ function renovas_vider_tables($nom_meta_base_version) {
 
 	effacer_meta($nom_meta_base_version);
 }
-
-?>
