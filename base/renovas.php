@@ -24,7 +24,7 @@ function renovas_declarer_champs_extras($champs = array()) {
 								'restrictions'=>array('voir' => array('auteur' => ''),//Tout le monde peut voir
 								'modifier' => array('auteur' => 'administrateur')),//Seuls les webmestres peuvent modifier
 					),
-			)      
+			)
 	);
 
 	return $champs;

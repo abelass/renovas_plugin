@@ -3,7 +3,7 @@
  * Utilisations de pipelines par Renovas
  *
  * @plugin     Renovas
- * @copyright  2013
+ * @copyright  2013 - 2019
  * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Renovas\Pipelines

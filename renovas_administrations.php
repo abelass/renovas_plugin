@@ -3,7 +3,7 @@
  * Fichier gérant l'installation et désinstallation du plugin Renovas
  *
  * @plugin     Renovas
- * @copyright  2013
+ * @copyright  2013 - 2019
  * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Renovas\Installation
