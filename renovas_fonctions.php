@@ -37,7 +37,7 @@ function get_id_secteur($id_rubrique, $ids_secteur) {
 			'id_parent', 
 			'spip_rubriques', 
 			'id_rubrique=' . $id_rubrique)) {
-			$id_secteur = get_id_source($id_parent, $ids_secteur);
+			$id_secteur = get_id_secteur($id_parent, $ids_secteur);
 		}
 	}
 	return $id_secteur;
