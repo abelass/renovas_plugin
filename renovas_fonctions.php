@@ -24,6 +24,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  */
 function get_id_secteur($id_rubrique, $ids_secteur) {
 	$id_secteur = $id_rubrique;
+	
 	if (!is_array($ids_secteur)) {
 		$ids_secteur = explode(',', $ids_secteur);
 	}
