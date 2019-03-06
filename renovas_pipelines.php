@@ -45,5 +45,3 @@ function renovas_pre_edition($flux){
 	}
 	return $flux;
 }
-
-?>
