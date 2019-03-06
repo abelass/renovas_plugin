@@ -11,14 +11,24 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 	
-
-function get_id_source($id_rubrique, $ids_source) {
+/**
+ * Détermine l'id_rubrique du secteur dont dépend la rubrique en cours.
+ * 
+ * @param int $id_rubrique
+ *   L'id_rubrique courante.
+ * @param array les 
+ *   identifiants des secteurs
+ * 
+ * @return 
+ *   L'identifiant du secteur correpondnanbt
+ */
+function get_id_source($id_rubrique, $ids_secteur) {
 	if (!$id_source = sql_getfetsel(
 		'id_rubrique', 
 		'spip_rubriques',
-		'id_rubrique=' . $id_rubrique . ' AND id_rubrique IN (' .implode(',',$ids_source) . ')')) {
+		'id_rubrique=' . $id_rubrique . ' AND id_rubrique IN (' .implode(',',$ids_secteur) . ')')) {
 		$id_parent = sql_getfetsel('id_parent', 'spip_rubriques', 'id_rubrique=' . $id_rubrique);
-		$id_source = get_id_source($id_parent, $ids_source);
+		$id_source = get_id_source($id_parent, $ids_secteur);
 	}
 	return $id_source;
 }
