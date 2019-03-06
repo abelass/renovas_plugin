@@ -22,17 +22,22 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * @return 
  *   L'identifiant du secteur correpondnanbt
  */
-function get_id_source($id_rubrique, $ids_secteur) {
-	if (!$id_rubrique = sql_getfetsel(
+function get_id_secteur($id_rubrique, $ids_secteur) {
+	$id_secteur = $id_rubrique;
+	if (!is_array($ids_secteur)) {
+		$ids_secteur = explode(',', $ids_secteur);
+	}
+
+	if (!$id_secteur = sql_getfetsel(
 		'id_rubrique', 
 		'spip_rubriques',
 		'id_rubrique=' . $id_rubrique . ' AND id_rubrique IN (' .implode(',',$ids_secteur) . ')')) {
-		if ($id_rubrique AND $id_parent = sql_getfetsel(
+		if ($id_parent = sql_getfetsel(
 			'id_parent', 
 			'spip_rubriques', 
 			'id_rubrique=' . $id_rubrique)) {
-			$id_rubrique = get_id_source($id_parent, $ids_secteur);
+			$id_secteur = get_id_source($id_parent, $ids_secteur);
 		}
 	}
-	return $id_rubrique;
+	return $id_secteur;
 }
