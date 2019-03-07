@@ -23,6 +23,7 @@
 		<necessite nom="gisgeom" compatibilite="[1.11.5;]" />
 		<necessite nom="multilingue" compatibilite="[1.0.16;]" />
 		<necessite nom="cextras" compatibilite="[3.11.7;]" />
+		<necessite nom="saveauto" compatibilite="[1.2.6;]" />
 
 		<pipeline nom="declarer_champs_extras" inclure="base/renovas.php" />
 		<pipeline nom="pre_edition" inclure="renovas_pipelines.php" />
