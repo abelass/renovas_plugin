@@ -1,7 +1,7 @@
 <paquet
 	prefix="renovas"
 	categorie="maintenance"
-	version="2.0.1"
+	version="2.0.2"
 	etat="test"
 	compatibilite="[3.0.5;3.2.*]"
 	logo="prive/themes/spip/images/renovas-64.png"
@@ -20,6 +20,7 @@
 
 
 		<necessite nom="gis" compatibilite="[4.45.1;]" />
+		<necessite nom="geom" compatibilite="[1.11.5;]" />
 		<necessite nom="multilingue" compatibilite="[1.0.16;]" />
 		<necessite nom="cextras" compatibilite="[3.11.7;]" />
 
